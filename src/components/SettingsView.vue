@@ -42,6 +42,8 @@ onMounted(async () => {
           await checkDbStatus();
         }
       });
+    } else {
+      console.warn("Google Client ID manquant.");
     }
   } catch (err) {
     console.error("Échec du chargement du script Google GIS:", err);
