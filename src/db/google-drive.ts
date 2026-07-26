@@ -59,7 +59,9 @@ export function connectGoogleDrive() {
   if (googleGisClient) {
     googleGisClient.requestAccessToken();
   } else {
-    syncStatusMsg.value = 'Erreur : Google Client non initialisé.';
+    const errorMsg = 'Erreur : Google Client non initialisé (vérifie que VITE_GOOGLE_CLIENT_ID est défini dans ton fichier .env local).';
+    syncStatusMsg.value = errorMsg;
+    console.error(errorMsg);
   }
 }
 
